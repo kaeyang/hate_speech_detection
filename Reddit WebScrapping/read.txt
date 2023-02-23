@@ -1,7 +1,0 @@
-Can try running script on terminal using terminal_script which takes in 2 inputs.
-
-Use the demo_walkthrough notebook to see each function in action
-
-For Airflow, put both the airflow_dag.py and reddit_API_scrapper.py in dags folder
-
-There are 3 variables you can adjust in airflow_dag.py and reddit_API_scrapper.py. (sub, num_posts, and folder_path)
