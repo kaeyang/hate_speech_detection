@@ -1,0 +1,11 @@
+praw
+google-cloud-storage
+mongodb
+pyspark
+apache-airflow-providers-apache-spark 
+airflow
+sodapy
+pymongo
+pandas
+datetime
+os
