@@ -71,7 +71,7 @@ def create_comment_df(df, reddit):
 
 
 def write_csv_to_gcs(bucket_name, blob_name, service_account_key_file, df):
-    """Write and read a blob from GCS using file-like IO"""
+    '''Write and read a blob from GCS using file-like IO'''
     storage_client = storage.Client.from_service_account_json(
         service_account_key_file)
     bucket = storage_client.bucket(bucket_name)
@@ -82,6 +82,7 @@ def write_csv_to_gcs(bucket_name, blob_name, service_account_key_file, df):
 
 
 def reddit_scrape_upload():
+    '''Whole process of scraping, creating data frames, and uploading to GCP'''
     today = datetime.now()
     reddit = create_reddit_instance()
 
