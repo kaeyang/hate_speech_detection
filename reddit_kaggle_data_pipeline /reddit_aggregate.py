@@ -7,6 +7,7 @@ from user_definition import *
 
 
 def retreive_reddit(spark, bucket_name, date):
+    '''Retrieves reddit data from GCP'''
     reddit_comments = (
         spark.read.format("csv")
         .option("header", True)
@@ -22,6 +23,7 @@ def retreive_reddit(spark, bucket_name, date):
 
 
 def insert_aggregates_to_mongo():
+    '''Converts csv data from GCP into MongoDB collections and insert them into MongoDB Atlas'''
     spark = SparkSession.builder.getOrCreate()
     conf = spark.sparkContext._jsc.hadoopConfiguration()
     conf.set("google.cloud.auth.service.account.json.keyfile",
