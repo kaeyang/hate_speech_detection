@@ -6,6 +6,7 @@ from user_definition import *
 
 
 def retreive_kaggle(spark, bucket_name):
+    '''Retrieves the kaggle data from GCP'''
     kaggle_data = (
         spark.read.format("csv")
         .option("header", True)
@@ -16,6 +17,7 @@ def retreive_kaggle(spark, bucket_name):
 
 
 def insert_aggregates_to_mongo():
+    '''Converts csv data from GCP into MongoDB collections and insert them into MongoDB Atlas'''
     spark = SparkSession.builder.getOrCreate()
     conf = spark.sparkContext._jsc.hadoopConfiguration()
     conf.set("google.cloud.auth.service.account.json.keyfile",
