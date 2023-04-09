@@ -1,4 +1,4 @@
-# hate_speech_detection
+# NLP Data Pipeline and text classification
 
 
 ### Data Pipeline
